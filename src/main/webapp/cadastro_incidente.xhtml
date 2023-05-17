@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Formulário de Cadastro - Incidente</title>
+</h:head>
+
+<h:body>
+    <h:form id= "formulario">
+    	<p:messages id="messages" showDetail="true" closable="true"><p:autoUpdate/></p:messages>
+
+        <p:panel header="Cadastro de Denúncia">
+        <p>Vítima</p>
+			<p:panelGrid columns="6">	
+					
+				
+	            <p:outputLabel  value="Nome" />          
+	            <p:inputTextarea id="nomeVitima" value="#{vitimaBean.vitima.nome}" required="true" />
+	            
+   	            <p:outputLabel  value="Sexo" />          
+	            <p:inputTextarea id="sexoVitima" value="#{vitimaBean.vitima.sexo}" required="true" />
+	            
+         	    <p:outputLabel  value="Idade" />          
+	            <p:inputTextarea id="idadeVitima" value="#{vitimaBean.vitima.idade}" required="true" />
+	            
+         	    <p:outputLabel  value="Serie" />          
+	            <p:inputTextarea id="serie" value="#{vitimaBean.vitima.serie}" required="true" />
+	            
+	            <p:outputLabel  value="Turno" />          
+	            <p:inputTextarea id="turno" value="#{vitimaBean.vitima.turno}" required="true" />
+	            
+	            <p:outputLabel  value="Endereço" />          
+	            <p:inputTextarea id="endereço" value="#{vitimaBean.vitima.endereco}" required="true" />
+           </p:panelGrid>
+           <p>Suposto Agressor</p>
+           <p:panelGrid columns="6">
+				
+	            <p:outputLabel  value="Nome" />          
+	            <p:inputTextarea id="nomeAgressor" value="#{agressorBean.agressor.nome}" required="true" />
+	           	
+	           	<p:outputLabel  value="Sexo" />          
+	            <p:inputTextarea id="sexoAgressor" value="#{agressorBean.agressor.sexo}" required="true" />
+	            
+	            <p:outputLabel  value="Idade" />          
+	            <p:inputTextarea id="idadeAgressor" value="#{agressorBean.agressor.idade}" required="true" />
+	            
+            	<p:outputLabel  value="Relacionamento com a Vítima ou Parentesco" />          
+	            <p:inputTextarea id="relacionametoParentesco" value="#{agressorBean.agressor.relacionamentoVitima}" required="true" />
+	            
+            	<p:outputLabel  value="Ocupação" />          
+	            <p:inputTextarea id="ocupaçao" value="#{agressorBean.agressor.ocupacao}" required="true" />
+	            
+            	<p:outputLabel  value="Raça" />          
+	            <p:inputTextarea id="raça" value="#{agressorBean.agressor.raca}" required="true" />
+	            
+            	<p:outputLabel  value="Identidade de Genero" />          
+	            <p:inputTextarea id="identidadeGenero" value="#{agressorBean.agressor.identidadeGenero}" required="true" />
+	            
+            	<p:outputLabel  value="Escolaridade" />          
+	            <p:inputTextarea id="escolaridade" value="#{agressorBean.agressor.escolaridade}" required="true" />
+	           
+	           </p:panelGrid>
+	           <P>Incidente</P>
+	           <p:panelGrid columns="6">
+				
+	            <p:outputLabel  value="Incidente" />          
+	            <p:inputTextarea id="incidente" value="#{denunciaBean.denuncia.incidente}" required="true" />
+	           
+	            <p:outputLabel  value="Violação de Direito" />
+	            <p:inputText id="violacaoDireito" value="#{denunciaBean.denuncia.violacaoDireito}" required="true" />
+	                
+	            <p:outputLabel value="Providências Tomadas" />
+	            <p:inputTextarea id="providencias" value="#{denunciaBean.denuncia.providencias}" required="true" />
+	            </p:panelGrid>
+	            <p:commandButton value="Cadastrar" action="#{generalBean.salvar}" update= "formulario"/>
+     		
+		</p:panel>
+    </h:form>
+</h:body>
+
+</html>
